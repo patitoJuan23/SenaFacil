@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeñaFácil - Aprende Lengua de Señas Colombiana (LSC)</title>
+    <meta name="description" content="Plataforma educativa fácil e interactiva para aprender Lengua de Señas Colombiana (LSC). Diseñada para estudiantes de escuela y feria de ciencias.">
+    
+    <!-- Hojas de Estilos -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon con Logo Oficial -->
+    <link rel="icon" type="image/png" href="img/logo.png">
+</head>
+<body>
+
+    <!-- NAVEGACIÓN Y CABECERA -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#inicio" class="brand-logo-wrapper nav-link" data-target="inicio">
+                <img src="img/logo.png" alt="Logo SeñaFácil" class="brand-logo-img">
+            </a>
+            
+            <nav class="main-nav">
+                <a href="#" class="nav-link active" data-target="inicio">🏠 Inicio</a>
+                <a href="#" class="nav-link" data-target="aprender">👋 Aprender</a>
+                <a href="#" class="nav-link" data-target="juego">🎮 Jugar</a>
+                <a href="#" class="nav-link" data-target="frases">🧩 Frases</a>
+                <a href="#" class="nav-link" data-target="guia-exposicion">💡 Guía Exposición</a>
+                <button id="theme-toggle" class="theme-toggle-btn" title="Cambiar modo día/noche" aria-label="Cambiar modo día/noche">🌙</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- ==========================================
+             PANTALLA PRINCIPAL / HERO
+             ========================================== -->
+        <section id="inicio" class="app-section active-section">
+            <div class="hero-banner">
+                <div class="hero-text-col">
+                    <span class="hero-tag">🇨🇴 LENGUA DE SEÑAS COLOMBIANA (LSC)</span>
+                    <h1 class="hero-title">Aprende lenguaje de señas de forma <highlight>fácil y divertida</highlight></h1>
+                    <p class="hero-subtitle">Una plataforma educativa interactiva creada para acercar a las personas a la comunidad sorda y promover la verdadera inclusión.</p>
+                    
+                    <div class="hero-buttons">
+                        <button class="btn-primary-hero nav-link" data-target="aprender">
+                            👋 ¡Aprender Señas!
+                        </button>
+                        <button class="btn-secondary-hero nav-link" data-target="juego">
+                            🎯 ¡Jugar Ahora!
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-graphic">
+                    <div class="hero-card-preview">
+                        <img src="img/logo.png" alt="Logo Oficial SeñaFácil">
+                        <h3 style="margin-top: 14px; font-family: var(--font-heading); color: var(--primary-blue);">SeñaFácil 🇨🇴</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 4px;">Aprende el lenguaje de señas de forma fácil y divertida</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARACTERÍSTICAS PRINCIPALES -->
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">👋</div>
+                    <h3>Tarjetas Interactivas</h3>
+                    <p>Aprende palabras cotidianas de LSC organizadas por categorías con explicaciones claras de la postura de las manos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3>Juego de Preguntas</h3>
+                    <p>Pon a prueba lo aprendido adivinando la seña correcta y acumulando puntos en la tabla escolar.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧩</div>
+                    <h3>Construye Frases</h3>
+                    <p>Combina señas en secuencia para formar oraciones sencillas como "Yo + Quiero + Agua".</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Promueve la Inclusión</h3>
+                    <p>Fomenta la empatía y la comunicación libre de barreras en el colegio y en la comunidad.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN APRENDER
+             ========================================== -->
+        <section id="aprender" class="app-section">
+            <div class="section-header">
+                <h2 class="section-title">👋 Aprende Señas Básicas</h2>
+                <p class="section-subtitle">Selecciona una categoría para explorar las palabras y sus señas en LSC</p>
+            </div>
+
+            <!-- FILTRO DE CATEGORÍAS -->
+            <div class="categories-bar">
+                <button class="cat-chip active" data-category="todos">✨ Todas</button>
+                <button class="cat-chip" data-category="saludos">👋 Saludos</button>
+                <button class="cat-chip" data-category="abecedario">🔤 Abecedario</button>
+                <button class="cat-chip" data-category="numeros">🔢 Números</button>
+                <button class="cat-chip" data-category="emociones">😊 Emociones</button>
+                <button class="cat-chip" data-category="familia">👨‍👩‍👧 Familia</button>
+            </div>
+
+            <!-- BUSCADOR -->
+            <div class="search-box">
+                <input type="text" id="search-signs" placeholder="🔍 Buscar una palabra o seña (ej: Hola, Agua, Feliz, Colegio)...">
+            </div>
+
+            <!-- CONTENEDOR DE TARJETAS DINÁMICAS -->
+            <div id="signs-grid" class="signs-grid">
+                <!-- Se llena con script.js -->
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN JUEGO "¿QUÉ SIGNIFICA ESTA SEÑA?"
+             ========================================== -->
+        <section id="juego" class="app-section">
+            <div class="section-header">
+                <h2 class="section-title">🎮 Juego: ¿Qué significa esta seña?</h2>
+                <p class="section-subtitle">Observa la imagen de la seña y selecciona la respuesta correcta</p>
+            </div>
+
+            <div class="game-container">
+                <!-- TARJETA PRINCIPAL DEL JUEGO -->
+                <div id="quiz-card" class="quiz-card-wrapper">
+                    <div class="game-header">
+                        <span id="quiz-progress-text" class="progress-text">Pregunta 1 de 6</span>
+                        <span id="quiz-score-badge" class="score-badge">⭐ Puntos: 0</span>
+                    </div>
+
+                    <div class="progress-bar-track">
+                        <div id="quiz-progress-fill" class="progress-bar-fill"></div>
+                    </div>
+
+                    <div class="quiz-question-box">
+                        <div class="quiz-img-wrapper">
+                            <img id="quiz-img" src="img/hola.svg" alt="Imagen del juego">
+                        </div>
+
+                        <h3 class="quiz-question-title">¿Qué significa esta seña?</h3>
+
+                        <div id="quiz-options" class="quiz-options-grid">
+                            <!-- Opciones inyectadas dinámicamente -->
+                        </div>
+
+                        <!-- Feedback de respuesta -->
+                        <div id="quiz-feedback" class="quiz-feedback hidden">
+                            <!-- Se llena con script.js -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANTALLA FIN DEL JUEGO -->
+                <div id="quiz-finished" class="quiz-finish-card hidden">
+                    <div class="trophy-icon">🎉</div>
+                    <h2 class="section-title">¡Terminaste el juego!</h2>
+                    <p class="section-subtitle">Obtuviste un excelente desempeño</p>
+                    
+                    <div class="final-score-box">
+                        Puntaje Final: <span id="final-score">0</span> / <span id="total-questions">60</span> puntos
+                    </div>
+
+                    <p id="final-message" style="margin-bottom: 24px; color: var(--text-muted); font-size: 1.1rem;"></p>
+
+                    <button class="btn-restart-game" onclick="restartGame()">
+                        🔄 Jugar nuevamente
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN CONSTRUYE UNA FRASE
+             ========================================== -->
+        <section id="frases" class="app-section">
+            <div class="section-header">
+                <h2 class="section-title">🗣️ Construye una frase</h2>
+                <p class="section-subtitle">Selecciona palabras para armar mensajes completos y observa las señas en secuencia</p>
+            </div>
+
+            <div class="phrase-builder-card">
+                <!-- CAJA DE LA FRASE FORMADA -->
+                <div class="builder-display-box">
+                    <div id="phrase-result-text" class="phrase-result-text">
+                        <span class="placeholder-text">Haz clic en las palabras de abajo para armar tu frase...</span>
+                    </div>
+                    
+                    <div class="display-actions">
+                        <button class="btn-action-speak" onclick="speakSentence()">🔊 Escuchar Frase</button>
+                        <button class="btn-action-clear" onclick="clearSentence()">🗑️ Borrar Frase</button>
+                    </div>
+                </div>
+
+                <!-- SELECCIÓN DE PALABRAS -->
+                <h4 class="words-selection-title">Palabras disponibles:</h4>
+                <div id="words-pool" class="words-pool-grid">
+                    <!-- Se llena dinámicamente -->
+                </div>
+
+                <!-- SECUENCIA VISUAL -->
+                <div class="visual-sequence-section">
+                    <h3 class="visual-sequence-title">🖼️ Secuencia de señas correspondientes:</h3>
+                    <div id="phrase-visual-seq" class="visual-sequence-grid">
+                        <div class="empty-phrase-msg">Aquí aparecerán las tarjetas de señas en orden secuencial</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN GUÍA PARA EXPOSICIÓN ESCOLAR
+             ========================================== -->
+        <section id="guia-exposicion" class="app-section">
+            <div class="section-header">
+                <h2 class="section-title">💡 Guía para la Exposición Escolar</h2>
+                <p class="section-subtitle">Preguntas clave y respuestas preparadas para los estudiantes de sexto grado</p>
+            </div>
+
+            <div class="expo-guide-grid">
+                <div class="guide-card">
+                    <span class="guide-num">Paso 1</span>
+                    <h3>1. ¿Qué problema identificaron?</h3>
+                    <p>Muchas personas sordas enfrentan barreras de comunicación todos los días porque la mayoría de oyentes no conocen la Lengua de Señas Colombiana (LSC).</p>
+                </div>
+
+                <div class="guide-card">
+                    <span class="guide-num">Paso 2</span>
+                    <h3>2. ¿Qué solución crearon?</h3>
+                    <p>Diseñamos <strong>SeñaFácil</strong>, una aplicación web interactiva, bonita y fácil de usar que enseña palabras básicas de forma visual y con juegos.</p>
+                </div>
+
+                <div class="guide-card">
+                    <span class="guide-num">Paso 3</span>
+                    <h3>3. ¿Cómo se aprende una seña?</h3>
+                    <p>Se aprende observando la posición de las manos, la forma de los dedos, el punto del cuerpo donde se ubica y la expresión del rostro.</p>
+                </div>
+
+                <div class="guide-card">
+                    <span class="guide-num">Paso 4</span>
+                    <h3>4. ¿Cómo funciona el juego?</h3>
+                    <p>Presenta imágenes de señas con opciones múltiples. Al responder, la app otorga puntos e indica inmediatamente si acertaste o si debes repasar.</p>
+                </div>
+
+                <div class="guide-card">
+                    <span class="guide-num">Paso 5</span>
+                    <h3>5. ¿Por qué esto promueve la inclusión?</h3>
+                    <p>Porque aprender al menos las señas básicas demuestra respeto, elimina prejuicios y permite construir un colegio y un país más justo para todos.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL DE DETALLE DE SEÑA -->
+    <div id="detail-modal" class="modal-overlay hidden">
+        <div class="modal-container">
+            <button class="modal-close-btn" onclick="closeModal()">×</button>
+            <div id="modal-body-content">
+                <!-- Inyectado desde script.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div style="margin-bottom: 12px;">
+                <img src="img/logo.png" alt="SeñaFácil" style="height: 40px;">
+            </div>
+            <p><strong>SeñaFácil</strong> &copy; 2026 - Proyecto Educativo de Lengua de Señas Colombiana (LSC).</p>
+            <p>Presentado por estudiantes de 6° grado para la Feria Escolar de Ciencia, Tecnología e Inclusión. 🇨🇴✨</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT PRINCIPAL -->
+    <script src="script.js"></script>
+</body>
+</html>

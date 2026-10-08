@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <rect width="400" height="300" rx="24" fill="#FEF3C7"/>
+  <circle cx="200" cy="120" r="70" fill="#F59E0B" opacity="0.2"/>
+  
+  <!-- Closed Fist with thumb to the side for Letter A -->
+  <g transform="translate(160, 60)">
+    <rect x="15" y="25" width="50" height="65" rx="14" fill="#FBBF24" stroke="#D97706" stroke-width="4"/>
+    <!-- Fingers folded down -->
+    <line x1="15" y1="42" x2="65" y2="42" stroke="#D97706" stroke-width="3"/>
+    <line x1="15" y1="58" x2="65" y2="58" stroke="#D97706" stroke-width="3"/>
+    <line x1="15" y1="74" x2="65" y2="74" stroke="#D97706" stroke-width="3"/>
+    <!-- Thumb resting on side -->
+    <rect x="-5" y="40" width="22" height="40" rx="9" fill="#FBBF24" stroke="#D97706" stroke-width="4"/>
+  </g>
+
+  <text x="200" y="240" font-family="sans-serif" font-weight="bold" font-size="34" fill="#92400E" text-anchor="middle">🔤 LETRA A</text>
+  <text x="200" y="272" font-family="sans-serif" font-size="14" fill="#B45309" text-anchor="middle">Puño cerrado con el pulgar apoyado a un lado</text>
+</svg>
